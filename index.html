@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Water Southwest — Arizona Water Treatment Experts</title>
+  <meta name="description" content="Find trusted water softener, reverse osmosis, and filtration specialists across Arizona. Get matched with a local expert today.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1a56a0;
+      --blue-dark: #133d78;
+      --blue-light: #e8f0fb;
+      --accent: #2eaadc;
+      --text: #1a1a2e;
+      --muted: #5a6070;
+      --border: #d0d8e8;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(26,86,160,0.10);
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--text); background: #f4f7fc; }
+
+    /* NAV */
+    nav { background: var(--blue); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { color: #fff; font-size: 1.15rem; font-weight: 700; letter-spacing: .3px; text-decoration: none; }
+    .nav-cta { background: var(--accent); color: #fff; padding: 8px 18px; border-radius: 6px; font-size: .9rem; font-weight: 600; text-decoration: none; transition: opacity .2s; }
+    .nav-cta:hover { opacity: .88; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%); color: #fff; padding: 64px 5% 56px; text-align: center; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+    .hero p { font-size: 1.1rem; opacity: .9; max-width: 560px; margin: 0 auto 36px; }
+
+    /* LEAD FORM */
+    .form-wrap { background: #fff; border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,.18); max-width: 560px; margin: 0 auto; padding: 32px 28px; }
+    .form-wrap h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; color: var(--blue); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: .82rem; font-weight: 600; color: var(--muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .4px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 10px 13px; border: 1.5px solid var(--border);
+      border-radius: 7px; font-size: .97rem; color: var(--text);
+      transition: border-color .2s; background: #fafbfd;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--accent); background: #fff;
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-submit { width: 100%; padding: 13px; background: var(--blue); color: #fff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background .2s; margin-top: 6px; }
+    .form-submit:hover { background: var(--blue-dark); }
+    .form-submit:disabled { background: #9ab0cc; cursor: not-allowed; }
+    .form-msg { margin-top: 12px; font-size: .93rem; text-align: center; min-height: 20px; }
+    .form-msg.success { color: #1a8a4a; }
+    .form-msg.error { color: #c0392b; }
+
+    /* TRUST BAR */
+    .trust-bar { background: var(--blue-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 5%; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: .92rem; font-weight: 600; color: var(--blue); }
+
+    /* VENDORS */
+    .vendors-section { max-width: 1200px; margin: 48px auto; padding: 0 5%; }
+    .vendors-section h2 { font-size: 1.55rem; font-weight: 800; margin-bottom: 8px; }
+    .vendors-section .subtitle { color: var(--muted); margin-bottom: 24px; font-size: .97rem; }
+
+    /* FILTER BAR */
+    .filter-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; align-items: center; }
+    .filter-bar label { font-size: .85rem; font-weight: 600; color: var(--muted); }
+    .filter-bar select { padding: 8px 12px; border: 1.5px solid var(--border); border-radius: 7px; font-size: .9rem; color: var(--text); background: #fff; cursor: pointer; }
+    .filter-bar select:focus { outline: none; border-color: var(--accent); }
+
+    /* VENDOR GRID */
+    .vendor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .vendor-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 20px; border: 1.5px solid var(--border); transition: box-shadow .2s, transform .15s; }
+    .vendor-card:hover { box-shadow: 0 6px 24px rgba(26,86,160,.16); transform: translateY(-2px); }
+    .vendor-cat-tag { display: inline-block; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--blue); background: var(--blue-light); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px; }
+    .vendor-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+    .vendor-card h3 a { color: var(--text); text-decoration: none; }
+    .vendor-card h3 a:hover { color: var(--blue); text-decoration: underline; }
+    .vendor-area { font-size: .83rem; color: var(--muted); margin-bottom: 8px; line-height: 1.4; }
+    .vendor-phone { display: inline-block; font-size: .9rem; font-weight: 600; color: var(--blue); text-decoration: none; margin-top: 4px; }
+    .vendor-phone:hover { text-decoration: underline; }
+    .no-results { color: var(--muted); font-size: .97rem; padding: 24px 0; display: none; }
+
+    /* FOOTER */
+    footer { background: var(--blue-dark); color: rgba(255,255,255,.7); text-align: center; padding: 28px 5%; font-size: .85rem; margin-top: 60px; }
+    footer a { color: rgba(255,255,255,.85); }
+
+    @media (max-width: 540px) {
+      .form-row { grid-template-columns: 1fr; }
+      .trust-bar { gap: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">💧 Safe Water Southwest</a>
+  <a class="nav-cta" href="#get-matched">Get Matched Free</a>
+</nav>
+
+<section class="hero" id="get-matched">
+  <h1>Find a Trusted Water Treatment Expert<br>in Arizona</h1>
+  <p>Hard water, contaminants, well water issues — get matched with a vetted local specialist. Free, no obligation.</p>
+
+  <div class="form-wrap">
+    <h2>Get Your Free Consultation</h2>
+    <form id="leadForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" placeholder="Jane" required>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" placeholder="Smith" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(480) 555-0100">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="zip">ZIP Code</label>
+          <input type="text" id="zip" name="zip" placeholder="85001" maxlength="5" required>
+        </div>
+        <div class="form-group">
+          <label for="issue">Water Issue</label>
+          <select id="issue" name="issue" required>
+            <option value="">Select one…</option>
+            <option>Hard water / scale buildup</option>
+            <option>Bad taste or odor</option>
+            <option>Well water treatment</option>
+            <option>Whole-house filtration</option>
+            <option>Reverse osmosis / drinking water</option>
+            <option>Not sure — need assessment</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Anything else? (optional)</label>
+        <textarea id="message" name="message" placeholder="Tell us more about your water situation…"></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="submitBtn">Get My Free Match →</button>
+      <p class="form-msg" id="formMsg"></p>
+    </form>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <span class="trust-item">✅ 27 Vetted Arizona Vendors</span>
+  <span class="trust-item">🔒 No Spam — Ever</span>
+  <span class="trust-item">⚡ Response Within 24 Hours</span>
+  <span class="trust-item">💰 Free, No Obligation</span>
+</div>
+
+<section class="vendors-section">
+  <h2>Arizona Water Treatment Specialists</h2>
+  <p class="subtitle">Browse vendors by service type or city — or submit the form above to get matched automatically.</p>
+
+  <div class="filter-bar">
+    <label for="catFilter">Service type:</label>
+    <select id="catFilter">
+      <option value="">All types</option>
+      <option value="RO filtration">Reverse Osmosis</option>
+      <option value="salt-based softener">Water Softener</option>
+      <option value="salt-free conditioner">Salt-Free Conditioner</option>
+      <option value="well water treatment">Well Water Treatment</option>
+    </select>
+    <label for="cityFilter">City:</label>
+    <select id="cityFilter">
+      <option value="">All cities</option>
+          <option value="Avondale">Avondale</option>
+          <option value="Buckeye">Buckeye</option>
+          <option value="Chandler">Chandler</option>
+          <option value="Flagstaff">Flagstaff</option>
+          <option value="Gilbert">Gilbert</option>
+          <option value="Glendale">Glendale</option>
+          <option value="Goodyear">Goodyear</option>
+          <option value="Maricopa">Maricopa</option>
+          <option value="Mesa">Mesa</option>
+          <option value="Peoria">Peoria</option>
+          <option value="Phoenix">Phoenix</option>
+          <option value="Prescott">Prescott</option>
+          <option value="Queen Creek">Queen Creek</option>
+          <option value="Scottsdale">Scottsdale</option>
+          <option value="Sedona">Sedona</option>
+          <option value="Surprise">Surprise</option>
+          <option value="Tempe">Tempe</option>
+          <option value="Tucson">Tucson</option>
+    </select>
+  </div>
+
+  <div class="vendor-grid" id="vendorGrid">
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://crystaltechwater.com/" target="_blank" rel="noopener">Crystal Tech Water</a></h3>
+        <p class="vendor-area">📍 Avondale, Buckeye, Chandler, Gilbert, Glendale, Goodyear, Maricopa, Mesa, Peoria…</p>
+        <a href="tel:602.326.6142" class="vendor-phone">602.326.6142</a>
+      </div>
+      <div class="vendor-card" data-cat="well water treatment">
+        <div class="vendor-cat-tag">Well Water Treatment</div>
+        <h3><a href="https://www.culligantucson.com/" target="_blank" rel="noopener">Culligan of Tucson</a></h3>
+        <p class="vendor-area">📍 Tucson</p>
+        <a href="tel:520-719-1632" class="vendor-phone">520-719-1632</a>
+      </div>
+      <div class="vendor-card" data-cat="salt-based softener">
+        <div class="vendor-cat-tag">Water Softener</div>
+        <h3><a href="https://desertwaterservices.com/" target="_blank" rel="noopener">Desert Water Services Homepage</a></h3>
+        <p class="vendor-area">📍 Tucson</p>
+        <a href="tel:(520) 327-8426" class="vendor-phone">(520) 327-8426</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://www.puredesertwater.com/" target="_blank" rel="noopener">Pure Desert Water</a></h3>
+        <p class="vendor-area">📍 Tucson</p>
+        <a href="tel:520-448-8600" class="vendor-phone">520-448-8600</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://ritewayac.com/phoenix/water-filtration-treatment/reverse-osmosis/" target="_blank" rel="noopener">Reverse Osmosis Systems in Phoenix, AZ</a></h3>
+        <p class="vendor-area">📍 Chandler, Gilbert, Glendale, Mesa, Phoenix, Scottsdale, Tempe, Tucson</p>
+        <a href="tel:(602) 661-1064" class="vendor-phone">(602) 661-1064</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://www.azpure.com/" target="_blank" rel="noopener">Arizona Pure Water</a></h3>
+        <p class="vendor-area">📍 Phoenix</p>
+        <a href="tel:(480) 687-1030" class="vendor-phone">(480) 687-1030</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://azh2o.com/" target="_blank" rel="noopener">Boyett's Family Water Treatment</a></h3>
+        <p class="vendor-area">📍 Mesa, Phoenix</p>
+        <a href="tel:480-969-7251" class="vendor-phone">480-969-7251</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://integritywaterarizona.com/" target="_blank" rel="noopener">Integrity Water Solutions</a></h3>
+        <p class="vendor-area">📍 Chandler, Goodyear, Mesa, Peoria, Phoenix, Scottsdale, Sedona, Tempe, Tucson</p>
+        <a href="tel:480.699.9078" class="vendor-phone">480.699.9078</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://azwatersolutions.com/" target="_blank" rel="noopener">Water Filtration Company Arizona</a></h3>
+        <p class="vendor-area">📍 Chandler, Gilbert, Glendale, Mesa, Peoria, Phoenix, Queen Creek, Scottsdale, Tem…</p>
+        <a href="tel:480-375-1512" class="vendor-phone">480-375-1512</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://www.state48water.com/" target="_blank" rel="noopener">State48Water</a></h3>
+        <p class="vendor-area">📍 Avondale, Buckeye, Chandler, Gilbert, Goodyear, Mesa, Peoria, Phoenix, Queen Cre…</p>
+        <a href="tel:(602) 730-0262" class="vendor-phone">(602) 730-0262</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://mywaterbros.com/" target="_blank" rel="noopener">Water Softener & Whole Home Water Filtration in Phoenix, AZ</a></h3>
+        <p class="vendor-area">📍 Avondale, Chandler, Gilbert, Glendale, Goodyear, Mesa, Peoria, Phoenix, Queen Cr…</p>
+        <a href="tel:(602) 869-9876" class="vendor-phone">(602) 869-9876</a>
+      </div>
+      <div class="vendor-card" data-cat="salt-based softener">
+        <div class="vendor-cat-tag">Water Softener</div>
+        <h3><a href="https://tucsonwaterpros.com/" target="_blank" rel="noopener">Tucson Water Pros - Your Tucson Water Treatment Experts</a></h3>
+        <p class="vendor-area">📍 Tucson</p>
+        <a href="tel:520-395-1358" class="vendor-phone">520-395-1358</a>
+      </div>
+      <div class="vendor-card" data-cat="salt-based softener">
+        <div class="vendor-cat-tag">Water Softener</div>
+        <h3><a href="https://www.ecowater.com/dealer/tucson-az/" target="_blank" rel="noopener">Water Filtration & Softener Systems in Tucson AZ</a></h3>
+        <p class="vendor-area">📍 Tucson</p>
+        <a href="tel:520-253-6655" class="vendor-phone">520-253-6655</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://spectrapure.com/collections/water-systems" target="_blank" rel="noopener">Reverse Osmosis Water Systems - SpectraPure</a></h3>
+        
+        
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://americanhomewater.com/reverse-osmosis-systems/" target="_blank" rel="noopener">Reverse Osmosis in Phoenix, Arizona - American Home Water</a></h3>
+        <p class="vendor-area">📍 Buckeye, Chandler, Gilbert, Glendale, Goodyear, Mesa, Peoria, Phoenix, Scottsdal…</p>
+        <a href="tel:602-993-0083" class="vendor-phone">602-993-0083</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://protecwateraz.com/reverse-osmosis" target="_blank" rel="noopener">Reverse Osmosis - Protec Water AZ</a></h3>
+        
+        <a href="tel:602-390-7444" class="vendor-phone">602-390-7444</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://secondopinionplumbingaz.com/reverse-osmosis-systems/" target="_blank" rel="noopener">Reverse Osmosis & Drinking Water Systems in Gilbert, AZ</a></h3>
+        <p class="vendor-area">📍 Chandler, Gilbert, Maricopa, Mesa, Phoenix, Queen Creek, Scottsdale, Surprise, T…</p>
+        <a href="tel:480-365-9555" class="vendor-phone">480-365-9555</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://hqplumbingandair.com/reverse-osmosis-installation-phoenix/" target="_blank" rel="noopener">Reverse Osmosis Systems in Phoenix, Scottsdale, Gilbert, AZ</a></h3>
+        <p class="vendor-area">📍 Chandler, Gilbert, Glendale, Mesa, Peoria, Phoenix, Scottsdale, Surprise, Tempe</p>
+        <a href="tel:602-675-1555" class="vendor-phone">602-675-1555</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://www.danawater.com/" target="_blank" rel="noopener">Dana Water Systems</a></h3>
+        <p class="vendor-area">📍 Gilbert, Mesa</p>
+        <a href="tel:480-396-4778" class="vendor-phone">480-396-4778</a>
+      </div>
+      <div class="vendor-card" data-cat="well water treatment">
+        <div class="vendor-cat-tag">Well Water Treatment</div>
+        <h3><a href="https://www.clearwatersystems.com/prescott-valley-az-clearwater-systems/" target="_blank" rel="noopener">Prescott Valley, Arizona Water Treatment Solutions</a></h3>
+        <p class="vendor-area">📍 Prescott, Sedona</p>
+        <a href="tel:888-928-3710" class="vendor-phone">888-928-3710</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://www.a2zwatersystems.com/" target="_blank" rel="noopener">Complete Water Systems LLC</a></h3>
+        <p class="vendor-area">📍 Avondale, Buckeye, Chandler, Flagstaff, Gilbert, Glendale, Goodyear, Maricopa, M…</p>
+        <a href="tel:602-396-5566" class="vendor-phone">602-396-5566</a>
+      </div>
+      <div class="vendor-card" data-cat="salt-free conditioner">
+        <div class="vendor-cat-tag">Salt-Free Conditioner</div>
+        <h3><a href="https://www.rosenberryrooms.com/best-water-softener-system-for-arizona/" target="_blank" rel="noopener">4 Best Water Softener System For Arizona (March 2026) Tested</a></h3>
+        <p class="vendor-area">📍 Flagstaff, Mesa, Phoenix, Scottsdale, Tempe, Tucson</p>
+        
+      </div>
+      <div class="vendor-card" data-cat="salt-based softener">
+        <div class="vendor-cat-tag">Water Softener</div>
+        <h3><a href="https://www.diyhappy.com/best-water-softeners-for-arizona/" target="_blank" rel="noopener">Best Water Softeners For Arizona (2026 Update) - Diy Happy</a></h3>
+        
+        
+      </div>
+      <div class="vendor-card" data-cat="salt-based softener">
+        <div class="vendor-cat-tag">Water Softener</div>
+        <h3><a href="https://advantagepureflo.com/" target="_blank" rel="noopener">Advantage Pure Flo - Advantage Pure Flo</a></h3>
+        <p class="vendor-area">📍 Maricopa, Mesa, Phoenix</p>
+        <a href="tel:(480) 396-0486" class="vendor-phone">(480) 396-0486</a>
+      </div>
+      <div class="vendor-card" data-cat="salt-based softener">
+        <div class="vendor-cat-tag">Water Softener</div>
+        <h3><a href="https://hybridwater.com/" target="_blank" rel="noopener">Clean Water Filtration & Softening for Arizona Homes</a></h3>
+        <p class="vendor-area">📍 Flagstaff, Glendale, Mesa, Phoenix, Queen Creek</p>
+        <a href="tel:(623)-400-7582" class="vendor-phone">(623)-400-7582</a>
+      </div>
+      <div class="vendor-card" data-cat="RO filtration">
+        <div class="vendor-cat-tag">Reverse Osmosis</div>
+        <h3><a href="https://www.culligan.com/locations/az/phoenix/water-filtration" target="_blank" rel="noopener">Water filtration solutions in Phoenix, AZ</a></h3>
+        <p class="vendor-area">📍 Maricopa, Phoenix</p>
+        <a href="tel:877-431-9752" class="vendor-phone">877-431-9752</a>
+      </div>
+      <div class="vendor-card" data-cat="well water treatment">
+        <div class="vendor-cat-tag">Well Water Treatment</div>
+        <h3><a href="https://extension.arizona.edu/topics/wells-septic-systems" target="_blank" rel="noopener">Wells & Septic Systems - UA Cooperative Extension</a></h3>
+        <p class="vendor-area">📍 Chandler, Tucson</p>
+        <a href="tel:480-963-2495" class="vendor-phone">480-963-2495</a>
+      </div>
+  </div>
+  <p class="no-results" id="noResults">No vendors found for that combination. Try clearing one filter.</p>
+</section>
+
+<footer>
+  <p>&copy; 2026 Safe Water Southwest. All rights reserved. &nbsp;|&nbsp; <a href="mailto:hello@safewatersouthwest.com">hello@safewatersouthwest.com</a></p>
+  <p style="margin-top:6px;font-size:.8rem;opacity:.7;">We connect homeowners with local water treatment professionals. We do not endorse or guarantee any vendor.</p>
+</footer>
+
+<script>
+  // ── Filter logic ──────────────────────────────────────────────
+  const grid = document.getElementById('vendorGrid');
+  const noResults = document.getElementById('noResults');
+  const catFilter = document.getElementById('catFilter');
+  const cityFilter = document.getElementById('cityFilter');
+
+  function applyFilters() {
+    const cat = catFilter.value;
+    const city = cityFilter.value;
+    let visible = 0;
+    grid.querySelectorAll('.vendor-card').forEach(card => {
+      const matchCat = !cat || card.dataset.cat === cat;
+      const matchCity = !city || (card.querySelector('.vendor-area') || {}).textContent.includes(city);
+      const show = matchCat && matchCity;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+  }
+  catFilter.addEventListener('change', applyFilters);
+  cityFilter.addEventListener('change', applyFilters);
+
+  // ── Lead form submission ──────────────────────────────────────
+  const APPS_SCRIPT_URL = 'APPS_SCRIPT_URL_PLACEHOLDER';
+  const form = document.getElementById('leadForm');
+  const btn = document.getElementById('submitBtn');
+  const msg = document.getElementById('formMsg');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+    msg.textContent = '';
+    msg.className = 'form-msg';
+
+    const data = {
+      fname: form.fname.value.trim(),
+      lname: form.lname.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.phone.value.trim(),
+      zip: form.zip.value.trim(),
+      issue: form.issue.value,
+      message: form.message.value.trim(),
+      submitted_at: new Date().toISOString(),
+    };
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data),
+      });
+      msg.textContent = '✅ Got it! You'll hear from a local expert within 24 hours.';
+      msg.className = 'form-msg success';
+      form.reset();
+    } catch(err) {
+      msg.textContent = '⚠️ Something went wrong. Please try again or call us directly.';
+      msg.className = 'form-msg error';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Get My Free Match →';
+    }
+  });
+</script>
+</body>
+</html>
