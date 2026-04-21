@@ -52,6 +52,7 @@
     .form-msg { margin-top: 12px; font-size: .93rem; text-align: center; min-height: 20px; }
     .form-msg.success { color: #1a8a4a; }
     .form-msg.error { color: #c0392b; }
+    .hero-offer { display: inline-block; background: #fff; color: var(--blue); font-size: 1.1rem; font-weight: 800; padding: 10px 22px; border-radius: 30px; margin-bottom: 22px; box-shadow: 0 2px 12px rgba(0,0,0,.15); letter-spacing: .1px; }
 
     /* TRUST BAR */
     .trust-bar { background: var(--blue-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 5%; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
@@ -99,6 +100,7 @@
 </nav>
 
 <section class="hero" id="get-matched">
+  <div class="hero-offer">🎁 Get a $25 gift card for a free quote and water test.</div>
   <h1>Find a Trusted Water Treatment Expert<br>in Arizona</h1>
   <p>Hard water, contaminants, well water issues — get matched with a vetted local specialist. Free, no obligation.</p>
 
@@ -423,7 +425,7 @@
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data),
       });
-      msg.textContent = '✅ Got it! You'll hear from a local expert within 24 hours.';
+      msg.textContent = '✅ Thanks — we\'ll be in touch within 2 hours during business hours to schedule your water test. Your $25 gift card is yours when we complete the water test at your home (takes about 20 minutes).';
       msg.className = 'form-msg success';
       form.reset();
     } catch(err) {
